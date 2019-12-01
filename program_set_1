@@ -1,0 +1,138 @@
+def problem1_1():
+    print("Problem Set 1")
+
+def problem1_2(x,y):
+    print(x+y)
+    print(x*y)
+    
+def problem1_4(miles):
+    feet=miles*5280
+    print(f"There are {feet} in {miles}")
+    
+def problem1_5(age):
+    if age<7:
+        print("Have a glass of milk")
+    elif age<21:
+        print("Have a coke")
+    else:
+        print("Have a martini")
+
+def problem1_6():
+    for i in range (1,100):
+        if i%2!=0:
+            print(i,end=" ")
+
+def problem1_7():
+    b1=float(input("Enter the length of one of the bases: "))
+    b2=float(input("Enter the length of one of the other bases: "))
+    h=float(input("Enter the height"))
+    A = (1 / 2)*(b1+b2)*h
+    print(f"The area of a trapezoid with bases {b1} and {b2} and height {h} is {A}")
+
+def problem2_1():
+	lis=list(range(20,30))
+	print(lis[3])
+	print(lis)
+
+	for i in lis:
+		print(i,end=" ")
+
+def problem2_2(my_list):
+	print(my_list)
+	print(my_list[0])
+	print(my_list[-1])
+	print(my_list[3:5])
+	print(my_list[0:3])
+	print(my_list[3:])
+	print(len(my_list))
+	my_list.append("z")
+	print(my_list)
+  
+  def problem2_3(ne):
+	for i in range(0,len(ne)):
+		print(ne[i],"has",len(ne[i]),"letters.")
+
+import random
+def problem2_4():
+	random.seed(70)
+	num_lis=[]
+	for i in range(10):
+		n=(random.random()*5+30)
+		num_lis.append(n)
+	print(num_lis)
+  
+import random
+def problem2_5():
+	for i in range(10):
+		print(random.randint(1,6))	
+	
+ import random
+def problem2_6():
+	random.seed(431)
+	for i in range(100):
+		print(random.randint(1,6)+random.randint(1,6))
+
+def problem2_7():
+	a=float(input("Enter length of side one:"))
+
+	b=float(input("Enter length of side two:"))
+
+	c=float(input("Enter length of side three:"))
+	s=((.5)*(a+b+c))
+	area=((s*(s-a)*(s-b)*(s-c))**0.5)
+	print("Area of a triangle with sides",a,b,c,"is",area)
+ 
+def problem2_8(temp_list):
+	sum=0
+	for i in range(0,len(temp_list)):
+		sum=sum+temp_list[i]
+	avg=sum/len(temp_list)
+	print("Average:",avg)
+	print("High:",max(temp_list))
+	print("Low:",min(temp_list))	
+  
+ import sys
+def problem3_1(txtfilename):
+	infile=open(txtfilename)
+	sum=0
+	for line in infile:
+		sum=sum+len(line)
+		print(line,end="")
+	print("\n\nThere are",sum,"letters in the file.")
+	infile.close() 
+  
+  import sys
+def problem3_2(collection):
+	for i in range(0,len(collection)):
+		print(collection[i])
+  
+import sys
+def problem3_3(month,day,year):
+	months=("January","February","March","April","May","June","July","August","September","October","November","December")
+	monthStr=int(month)-1
+	print(months[monthStr],str(day)+",",year)
+  
+import sys
+def problem3_4(mon, day, year):
+	months = ("January","February","March","April","May","June","July","August","September","October","November","December")
+	for i in range(0,len(months)):
+		if months[i]==mon:
+			p=i+1
+
+	print(str(p), str(day), year, sep='/')
+  
+ import sys
+def problem3_5(name):
+	phone_numbers = {"abbie":"(860) 123-4535", "beverly":"(901) 454-3241", \
+			 "james": "(212) 567-8149", "thomas": "(795) 342-9145"}
+	dictionary=(phone_numbers[name])
+	print(dictionary) 
+  
+  import sys
+import csv
+def problem3_7(csv_pricefile,flower):
+	infile=open(csv_pricefile)
+	reader=csv.reader(infile)
+	for row in reader:
+		if row[0] == flower:
+			print(row[1])
